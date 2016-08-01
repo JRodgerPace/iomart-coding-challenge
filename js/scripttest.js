@@ -1,7 +1,4 @@
-var status = "init";
-document.getElementById("current-status").innerHTML = status;
 
-var currentEvents = [];
 
 //class definition for events
 function Event(name, description) {
@@ -27,11 +24,36 @@ function Event(name, description) {
 	this.schedule_for = function(newDate){
 		this.scheduledDate = newDate; //method to schedule a date/time for the event
 	};
-	this.set_resolved(newDate){
+	this.set_resolved = function(newDate){
 		this.resolved = true;
 		this.resolvedDate = newDate; //method to resolve the event and add a date/time
 	};
-	this.update_time(newDate){
+	this.update_time= function(newDate){
 		this.last_updated = new Date(); //method to update the date/time of any activity
 	};
 };
+
+function Status(name, colour) {
+	var name = name;
+	var colour = colour;
+	var active = false;
+	
+	this.events = [];
+	this.get_name = function(){
+		return name;
+	};
+	this.get_colour = function(){
+		return colour;
+	};
+	
+};
+
+var critical = new Status("Critical", "red");
+var minor = new Status("Minor", "orange");
+var allOK = new Status("All OK", "green");
+var currentStatus = allOK;
+var currentEvents = [];
+document.getElementById("current-status").innerHTML = currentStatus.get_name();
+document.getElementById("current-status").style.color = currentStatus.get_colour();
+
+document.getElementById("current-events").innerHTML = currentEvents;
