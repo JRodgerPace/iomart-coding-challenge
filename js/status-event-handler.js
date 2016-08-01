@@ -16,6 +16,7 @@ function Event(name, description) {
 	this.type = undefined;
 	
 	//Public Methods
+	//Setters
 	this.set_name = function(newName){
 		this.name = newName; //method to change name of the event
 	};	
@@ -31,6 +32,10 @@ function Event(name, description) {
 	};
 	this.update_time= function(newDate){
 		this.last_updated = new Date(); //method to update the date/time of any activity
+	};
+	//Getters
+	this.get_name = function(){
+		return name;
 	};
 };
 

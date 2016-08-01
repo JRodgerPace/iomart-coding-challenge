@@ -2,9 +2,9 @@
 document.getElementById("event-add").onclick = addEvent;
 
 function addEvent() {
-	var newEventName = document.getElementById("name");
-	var newEventDescription = document.getElementById("desc");
-	var newEventDate = document.getElementById("date1");
+	var newEventName = document.getElementById("name").value;
+	var newEventDescription = document.getElementById("desc").value;
+	var newEventDate = Date.parse(document.getElementById("date1").value);
 	var newEvent = new Event(newEventName, newEventDescription);
 	newEvent.schedule_for(newEventDate);
 	if(document.getElementById("crit").checked)
@@ -25,4 +25,5 @@ function addEvent() {
 		minorEvents.push(newEvent);
 	}
 	allEvents.push(newEvent);
+	alert("Event added!");
 };
