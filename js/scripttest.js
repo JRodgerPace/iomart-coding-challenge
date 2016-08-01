@@ -13,6 +13,7 @@ function Event(name, description) {
 	//Public Properties
 	this.selected = false;
 	this.resolved = false;
+	this.active = true;
 	
 	//Public Methods
 	this.set_name = function(newName){
@@ -53,6 +54,7 @@ var minor = new Status("Minor", "orange");
 var allOK = new Status("All OK", "green");
 var currentStatus = allOK;
 var currentEvents = [];
+
 document.getElementById("current-status").innerHTML = currentStatus.get_name();
 document.getElementById("current-status").style.color = currentStatus.get_colour();
 
