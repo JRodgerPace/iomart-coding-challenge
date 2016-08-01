@@ -43,14 +43,16 @@
 				<input type="text" class="form-control" id="desc">
 				<label for="date1">Scheduled For:</label>
 				<input type="datetime" class="form-control" id="date1">
-				<label class="radio-inline"><input type="radio" value="">Critical Event</label>
-				<label class="radio-inline"><input type="radio" value="">Minor Event</label>
+				<label class="radio-inline"><input type="radio" name="eventtype" id="crit">Critical Event</label>
+				<label class="radio-inline"><input type="radio" name="eventtype" id="minor">Minor Event</label>
 			</div>
-			<a href="index.html" class="btn btn-default" role="button">Add Event</a>
+			<a href="index.html" class="btn btn-default" role="button" id="event-add">Add Event</a>
 		</div>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
 		<script src="js/bootstrap.min.js"></script>
+		<script src="js/status-event-handler.js"></script>
+		<script src="js/add-event.js"></script>
 	</body>
 </html>

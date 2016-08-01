@@ -5,7 +5,6 @@ function Event(name, description) {
 	//Private Properties
 	var name = name;
 	var description = description;
-	var link = "#";
 	var scheduledDate = new Date();
 	var resolvedDate = undefined;
 	var last_updated = new Date();
@@ -14,6 +13,7 @@ function Event(name, description) {
 	this.selected = false;
 	this.resolved = false;
 	this.active = true;
+	this.type = undefined;
 	
 	//Public Methods
 	this.set_name = function(newName){
@@ -39,7 +39,6 @@ function Status(name, colour) {
 	var colour = colour;
 	var active = false;
 	
-	this.events = [];
 	this.get_name = function(){
 		return name;
 	};
@@ -58,7 +57,4 @@ var currentEvents = [];
 var criticalEvents = [];
 var minorEvents = [];
 
-document.getElementById("current-status").innerHTML = currentStatus.get_name();
-document.getElementById("current-status").style.color = currentStatus.get_colour();
 
-document.getElementById("current-events").innerHTML = currentEvents;
